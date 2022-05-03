@@ -93,7 +93,7 @@ to_ops(BoundObject, #antidote_map{values=Values, new_values=NewValues, removes=R
   RemoveOps = lists:map(fun(K) -> {BoundObject, remove, K} end, Removes),
   lists:concat([AddOps, UpdateOps, RemoveOps]).
 
--spec update_ops(any(), map()) -> list()
+-spec update_ops(any(), map()) -> list().
 update_ops(BoundObject, Map) ->
   List = maps:to_list(Map),
   lists:map(fun({{Key, Type}, Value}) ->
