@@ -64,7 +64,7 @@ new(Values) ->
 value(#antidote_map{values=Values}) ->
   maps:map(fun({Key, Type}, Value) ->
               Mod = antidotec_datatype:module_for_crdt_type(Type),
-               {{Key, Type}, Mod:value(Value)}
+              {{Key, Type}, Mod:value(Value)}
            end, Values).
 
 -spec dirty_value(antidote_map()) -> map().
