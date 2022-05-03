@@ -7,6 +7,7 @@ script:
   - make test
   - make dialyzer
   - make lint
+  - make xref
   - rebar3 as test coveralls send
 sudo: required
 dist: trusty
